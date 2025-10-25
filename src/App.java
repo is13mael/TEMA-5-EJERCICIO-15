@@ -1,5 +1,6 @@
 public class App {
     public static void main(String[] args) throws Exception {
+        try{
         System.out.print("Introduzca la base: ");
         int base = Integer.parseInt(System.console().readLine());
         System.out.print("Introduzca el exponente máximo: ");
@@ -12,6 +13,10 @@ public class App {
             }
             System.out.printf("%d^%d = %d%n", base, i, resultado);
         }
-
+    }catch(NumberFormatException e){
+        System.out.println("Número mal introducido.");
+    }catch(Exception e){
+        System.out.println("Ha ocurrido un error inesperado.");
     }
+}
 }
